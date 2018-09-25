@@ -44,7 +44,9 @@ public class HanoiTowers {
 			
 			int size3 = process1( num-1, right, mid, left, to, from);
 			int size4 = 1;
+			
 			System.out.println("move " + num + " from "+mid + " to " + to);
+			
 			int size5 = process1( num-1, right, mid, left, from, to);
 			return size1 + size2 + size3 + size4 + size5;
 		}
