@@ -39,6 +39,7 @@ public class MaxTree1 {
 			else
 			{
 				leftMax.put(nodes[i], leftMaxStack.peek());
+				leftMaxStack.push(nodes[i]);
 			}
 			
 		}
@@ -49,6 +50,8 @@ public class MaxTree1 {
 			{
 				rightMaxStack.pop();
 			}
+			
+			
 			if(rightMaxStack.empty())
 			{
 				rightMaxStack.push(nodes[i]);
@@ -58,6 +61,7 @@ public class MaxTree1 {
 			else
 			{
 				rightMax.put(nodes[i], rightMaxStack.peek());
+				rightMaxStack.push(nodes[i]);
 			}
 		}
 		
@@ -114,15 +118,20 @@ public class MaxTree1 {
 		while(!nodes.empty())
 		{
 			Node node = nodes.pop();
+			System.out.println("father node:"+node.value);
+			
 			if(node.left!=null)
 			{
 				nodes.push(node.left);
+				System.out.println("left child node:"+node.left.value);
 			}
 			if(node.right!=null)
 			{
 				nodes.push(node.right);
+				System.out.println("right child node:" + node.right.value);
 			}
-			System.out.println("node:"+node.value);
+			
+			System.out.println("                         ");
 		}
 		
 		

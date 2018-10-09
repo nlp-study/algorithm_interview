@@ -10,4 +10,10 @@ public class Node {
 		this.value = data;
 	}
 
+	@Override
+	public String toString() {
+		return "[value=" + value + ", left=" + left + ", right=" + right+"]";
+				
+	}
+
 }
